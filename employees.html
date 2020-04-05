@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
     <title>Assignment 05 - Employee Management Application</title>
     <script src="js/employee-management.js"></script>
+    <style>
+
+body {
+    font-family: sans-serif;
+    width: 730px;
+}
+main {
+    padding: 0 2em 1em;
+}
+h1 {
+    font-size: 150%;
+}
+h2 {
+    font-size: 120%;
+}
+input[type="text"], select {
+    width: 20em;
+    padding: 5px 0;
+    margin-bottom: 1em;
+}
+input[type="checkbox"],[type="radio"] {
+    width: 1em;
+    margin-bottom: 1em;
+}
+input[type="button"] {
+    margin-top:10px;
+}
+#registration_info span {
+    color: red;
+}
+td {
+	width: 9em;	
+}
+    </style>
 </head>
 <body>
-    
+    <h2>The Employee Management Application</h2>
+    <h3>Add Employee</h3>
+    <form action="register_account.html" method="get" id="registration_form">
+        <strong>Name:</strong>
+        <input type="text" id="email_address"><br>
+        <strong>Title:</strong>
+        <input type="text" id="phone"><br>
+        <strong>Extension:</strong>
+        <input type="text" id="extension"><br>
+           
+ 
+        <input type="button" id="register" value="Add">
+       
+    </form>
+<h3> <strong>Showing 3 Employees</strong></h3>
+
+    <h2 id="registration_header">&nbsp;</h2>
+    <table id="registration_info"></table>
+</main>
 </body>
 </html>
