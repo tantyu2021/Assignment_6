@@ -1,5 +1,3 @@
-/*eslint-env browser*/
-
 //STEP 1 -Use the old school HTML attribute method to attach a click event handler to the button
 function alertMessage() {
     window.alert("btn1: I have been clicked");
@@ -9,72 +7,33 @@ function btn2() {
     alert("btn2: I have been clicked");
   }
 
-//STEP 3 - a script that attaches an event listener to the button and listens for the click event
+//STEP 3 an event listener to the button
+//STEP 4
+//STEP 5
 // btn3.addEventListener("click", function (e) {
 //     alert(e.target.innerText);
 // });
 
-
-
-// var btn = document.getElementById("btn3").innerHTML;
-//   alert(btn);
-
-
-
-
-// let myElement = window.document.getElementById("btn2");
+// let myElement = window.document.getElementById("btn3");
 // myElement.onclick = function() {
-// window.alert("btn2: I have been clicked");
+// window.alert("btn3: I have been clicked");
 // }
-
-// Event Model
-// btn3.addEventListener("click", function (e) {
-//     window.console.log(e.target.innerText); //displays 'Third button'
-//         window.alert('btn3: I have been clicked');
-//         }, false);
 
 // btn3.addEventListener("click", writeMessage);
 // function writeMessage() {
 // window.alert("btn3: I have been clicked");
 // }
-
-//STEP 4
-// btn3.addEventListener("click", writeMessage);
-// function writeMessage() {
-// window.alert("btn3: I have been clicked");
-// }
-
-//STEP 5
 
 //STEP 6 - prevents the browser from redirecting to the site
-//or
-function redirectHere() {
-    alert("Google is resting");
-  }
+
+// function redirectHere() {
+//     alert("Google is resting");
+//   }
 
 function redirect1() {
     alert("Hello Google!");
   }
 
-// $(function() {
-// $('div a').click(function(event) {
-//     window.alert(event.target.nodeName + ' triggered the event.');
-// });
-// });
-
-// $(document).ready(function(){  //or- $(function() {
-//     $("div a").click(function(event){
-//       event.stopPropagation();
-//       alert("The span element was clicked.");
-//     });
-//     $('a:hover').css('color', 'green');
-//   });
-
-// var stopProp = a.click(function(event){
-//     event.stopPropagation();
-//     alert("The link element was clicked.");
-//   });
-//   stopProp();
   
 function redirectHere(event){
     event.stopPropagation();
@@ -88,12 +47,13 @@ a.addEventListener("click", function (e) {
 });
  }
 
- function redirectHere(event){
-a.click(function(event) {
-    window.alert('you clicked on the link but the browser prevents from  redirecting to the site');
-    //window.alert(event.target.nodeName + ' triggered the event.');
-});
- }
+//  function redirectHere(event){
+// a.click(function(event) {
+//     window.alert('you clicked on the link but the browser prevents from  redirecting to the site');
+//     //window.alert(event.target.nodeName + ' triggered the event.');
+// });
+//  }
+
 //STEP 7
 function showAlert() {
     var content = document.getElementById("p1").innerHTML;
@@ -103,16 +63,49 @@ function showAlert() {
 function newP() {
     window.open("newpage.html", "fly", "width=300,height=300,left=100,top=100");
   }
-
-
 //window.open('http://www.google.com','google','width=300,height=300');
 
 //STEP 9
+function start() {
+    window.console.log("Learning JavaScript is fun!");alert('Learning JavaScript is fun!');
+    var id = window.setInterval(boo, 2000);
+  //  window.setInterval(boo, 2000);
+  }
+  function stop() {
+    window.clearInterval(id);
+  }
+
+//STEP 10
+function choice() {
+
+    var choice=document.getElementById("mySelect");
+    var strUser = choice.options[choice.selectedIndex].text;
+
+    if(strUser=="Plan 1"){
+        alert("You selected Plan 1");
+    }
+    else if(strUser=="Plan 2"){
+        alert("You selected Plan 2");
+    }
+    else if(strUser=="Plan 3"){
+        alert("You selected Plan 3");
+    }
+    else if(strUser=="Plan 4"){
+        alert("You selected Plan 4");
+    }
+    else {
+        alert("Create Plan");
+    }
+
+}
 
 
 
+
+//your broweser info
 var browserInfo = window.navigator.appName + " " + window.navigator.appVersion;
-document.write("<h2>Browser Info</h2><p>"+browserInfo +"</p>");
+//document.write("<h2>Browser Info</h2><p>"+browserInfo +"</p>");
+console.log("<h2>Browser Info</h2><p>"+browserInfo +"</p>");
 var newWindow;
 function opennewWindow() {
     newWindow = window.open("", "", "width=500, height=300, top=150, left=150");
@@ -129,6 +122,30 @@ function closenewWindow() {
     }
     else {
         alert("Nothing to open !!");
+        console.log("Nothing to open !!");
     }
 }
-//STEP 10
+
+//browser name
+var sBrowser, sUsrAg = window.navigator.userAgent;
+if(sUsrAg.indexOf("Chrome") > -1) {
+sBrowser = "Google Chrome";
+} else if (sUsrAg.indexOf("Safari") > -1) {
+sBrowser = "Apple Safari";
+} else if (sUsrAg.indexOf("Opera") > -1) {
+sBrowser = "Opera";
+} else if (sUsrAg.indexOf("Firefox") > -1) {
+sBrowser = "Mozilla Firefox";
+} else if (sUsrAg.indexOf("MSIE") > -1) {
+sBrowser = "Microsoft Internet Explorer";
+}
+console.log("You are using: " + sBrowser);
+//window.alert("You are using: " + sBrowser);
+
+//screen sizes
+window.console.log(window.screen.width);
+// Total width of the screen
+window.console.log(window.screen.availWidth); // Width of the screen (- Windows taskbar)
+window.console.log(window.screen.height);
+// Total height of the screen
+window.console.log(window.screen.availHeight); // Height of the screen (- Windows taskbar)

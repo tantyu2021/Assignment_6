@@ -20,7 +20,7 @@ h2 {
     font-size: 120%;
 }
 input[type="text"], select {
-    width: 20em;
+    width: 40em;
     padding: 5px 0;
     margin-bottom: 1em;
 }
@@ -36,6 +36,18 @@ input[type="button"] {
 }
 td {
 	width: 9em;	
+}
+
+/* for table -table, thead, tbody, th, td, tr*/
+table, thead, th, td, tr {
+    border: olive 1px solid;
+}
+thead {
+   background-color: cornflowerblue;
+   color: #fff;
+}
+ td :nth-child(odd){
+    background-color: skyblue;
 }
     </style>
 </head>
@@ -54,10 +66,60 @@ td {
         <input type="button" id="register" value="Add">
        
     </form>
-<h3> <strong>Showing 3 Employees</strong></h3>
-
+<h3> <strong>Showing Employees List</strong></h3>
+<output id="futurevalue"></output>
+<!--
+<output id="futurevalue"></output> -->
     <h2 id="registration_header">&nbsp;</h2>
-    <table id="registration_info"></table>
-</main>
+    <table id="registration_info">table</table>
+    <table>
+        <thead>
+         <tr>  
+             <th>Name</th>
+             <th>Title</th>
+             <th>Extension</th>
+             <th>&nbsp;</th>
+          </tr>  
+        </thead>
+            
+  <tbody>
+      <tr>  
+             <td>name1</td>
+             <td>duty 1</td>
+             <td>n 1</td>
+             <td> button 1</td>
+     </tr>
+
+<tr>  
+        <td>name2</td>
+        <td>duty 2</td>
+        <td>n 2</td>
+        <td> button 2</td>
+</tr>
+
+<tr>  
+    <td>name3</td>
+    <td>duty 3</td>
+    <td>n 3</td>
+    <td> button 3</td>
+</tr>
+
+<tr>  
+    <td>name4</td>
+    <td>duty 4</td>
+    <td>n 4</td>
+    <td> button 4</td>
+</tr>
+
+ 
+       <!--      <td>&nbsp;</td>
+             <td></td>
+             <td></td>
+             <td></td>           
+          </tr>    -->
+</tbody>
+</table>
+
+
 </body>
 </html>

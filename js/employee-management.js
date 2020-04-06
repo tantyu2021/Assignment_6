@@ -5,7 +5,7 @@ function display_menu() {
    
     window.alert("COMMAND MENU");
 
-
+    // document.write("show - Show all employees");
 
     window.console.log("Welcome to the Employee Management Application");
     window.console.log("");
@@ -21,6 +21,8 @@ function display(employee_list) {
     var i = 1;
     employee_list.forEach(function (employee) {
         window.console.log(String(i) + ". " + employee);
+        i += 1;
+        document.write(String(i) + ". " + employee);
         i += 1;
     });
     window.console.log("");

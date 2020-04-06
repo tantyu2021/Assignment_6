@@ -8,12 +8,31 @@
 body {
     margin: 0 auto;
     max-width: 700px;
+    font-family: sans-serif;
 }
-
+h2 {
+    border-top: dotted 2px #C60; 
+}
+/* */
     </style>
 </head>
+
 <body>
     <header>
+
+<!-- step10 - -->
+<h2>Get selected value from dropdown list</h2>
+
+<select id="mySelect" onchange="choice()">
+    <option value="pl1" selected="selected">Create new Plan</option>
+    <option value="pl1">Plan 1</option>
+    <option value="pl2">Plan 2</option>
+    <option value="pl3">Plan 3</option>
+    <option value="pl4">Plan 4</option>
+</select>
+<input type="button" value="Select" class="pan" onclick="choice()">
+
+
         <h2>The buttons</h2>
 <!--1. Inline HTML Attribute-the old school HTML attribute method to attach a click event handler to the button -->
     <button onclick="alertMessage()">First button</button>
@@ -30,18 +49,13 @@ body {
 <!--6.-->
 <div >
     <h2>Info from the link</h2>
-<a href="http://www.google.com" id="redirect" onclick="redirectHere()">Google-1</a>
+    <!-- 
+<a href="http://www.google.com" id="redirect" onclick="redirectHere()">Google-1</a> -->
 
-<a href="http://www.google.com" id="redirect">Visit Google</a>
- <!-- onclick="redirectHere()-->
+<a href="http://www.google.com" id="redirect" onclick="redirectHere();">Visit Google</a>
 <!-- and -->
 <a href="JavaScript:void(0)" onClick="redirect1();">Google-2</a>​
-<!--
-<div onclick="alert('you clicked the header')" class="header">
-  <span onclick="alert('you clicked inside the header');">something inside the header</span>
-</div>
 
--->
 </div>
 <!-- step7 -Add an event listener to the button -->
 <h2>Text </h2>
@@ -58,19 +72,37 @@ body {
 
 </div>
 <!-- step8 - a BOM method. When the button is clicked, newpage.html should appear as a popup window at 300 pixels wide by 300 pixels high-->
-<h2>Read an additional info</h2>
+<h2>Open New Page</h2>
 <input type="button" value="Open New Page"
 onClick="newP();"> 
 <!--onClick="showAlert();"-->
 
-<!-- step9 - -->
+
 <h2>BOM Window Object</h2>
     <p>
         <input type="button" value="Open Window" onclick="opennewWindow()" /><!-- Stop - -->
         <input type="button" value="Close Window" onclick="closenewWindow()" /><!-- Start - -->
     </p>
 
-<button id="newpage">newpage button</button>
+<!-- step9 - -->
+<h2>BOM .setInterval() method</h2>
+    <p>
+        <!-- Start - -->
+        <input type="button" value="Start" onclick="start()" /><!-- Stop - -->
+        <input type="button" value="Stop" onclick="stop()" />
+    </p>
+
+<!-- step10 - -->
+<h2>Get selected value from dropdown list</h2>
+
+<select id="mySelect" onchange="choice()">
+    <option value="st1" selected="selected">Create new Plan</option>
+    <option value="st1">Plan 1</option>
+    <option value="st2">Plan 2</option>
+    <option value="st3">Plan 3</option>
+    <option value="st4">Plan 4</option>
+</select>
+<input type="button" value="Select" class="pan" onclick="choice()">
 
 </body>
 </html>
