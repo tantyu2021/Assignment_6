@@ -1,84 +1,65 @@
 /*eslint-env browser*/
+const LIST = document.querySelector('#createList tbody');
 
-function display_menu() {
-    window.alert("Welcome to the Employee Management Application");
-   
-    window.alert("COMMAND MENU");
+// delete element
+LIST.addEventListener('click', function(e){
+  if(e.target.className == 'del') { //el.del
+    const TR = e.target.parentElement;
+    TR.parentNode.removeChild(TR);
+  }
+});
 
-    // document.write("show - Show all employees");
+// add element
+const ADDFORM = document.forms['addList'];
 
-    window.console.log("Welcome to the Employee Management Application");
-    window.console.log("");
-    window.console.log("COMMAND MENU");
-    window.console.log("show - Show all employees");
-    window.console.log("add - Add an employee");
-    window.console.log("del - Delete an employee");
-    window.console.log("exit - Exit the program");
-    window.console.log("");
-}
-function display(employee_list) {
-    
-    var i = 1;
-    employee_list.forEach(function (employee) {
-        window.console.log(String(i) + ". " + employee);
-        i += 1;
-        document.write(String(i) + ". " + employee);
-        i += 1;
-    });
-    window.console.log("");
-}
-function add(employee_list) {
-    
-    var employee = window.prompt("Enter the employee's name");
-    employee_list.push(employee);
-    window.console.log(employee + " was added.");
-    window.console.log("");
-}
-function del(employee_list) {
-    
-    var num, employee;
-    num = parseInt(window.prompt("Employee number to delete"), 10);
-    if (num < 1 || num > employee_list.length) {
-        window.alert("Invalid employee number.");
-    } else {
-        employee = employee_list.splice(num - 1, 1);
-        window.console.log(employee + ' was deleted.');
-        /* OR
-        delete employee_list[num - 1];
-        window.console.log("Employee number " + num + " was deleted.");
-        */
-    }
-}
-function main() {
-    
-    var employee_list, command;
-    
-    display_menu();
-    
-    employee_list = ["Zak Ruvalcaba",
-                    "Sally Smith",
-                    "Fred Franklin",
-                    "John Smith",
-                    "Jane Caruthers"];
-    
-    while (true) {
-        command = window.prompt("Enter command: show, or add, or del");
-        if (command !== null) {
-            if (command === "show") {
-                display(employee_list);
-            } else if (command === "add") {
-                add(employee_list);
-            } else if (command === "del") {
-                del(employee_list);
-            } else if (command === "exit") {
-                break;
-            } else {
-                window.alert("That is not a valid command.");
-            }
-        } else {
-            break;
-        }
-    }
-    window.console.log("Program terminated.");
-}
-main();
+ADDFORM.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const VALUE = ADDFORM.querySelector('input#name[type="text"]').value;
+  const TR = document.createElement('tr');
+  const ADDENAME = document.createElement('td'); // creature name
+  const DELBTN = document.createElement('td'); // del
+  //48
+  const ADDDUTY = document.createElement('td');
+  const VALUED = ADDFORM.querySelector('input[type="text"]').value;
+  const ADDNUMBER = document.createElement('td');
+  const VALUENUM = ADDFORM.querySelector('input[type="text"]').value;
+
+  // add text content
+  ADDNAME.textContent = VALUE;
+  DELBTN.textContent = 'Delete';
+  //48
+  ADDDUTY.textContent = VALUED;
+  ADDNUMBER.textContent = VALUENUM;
+
+
+  // add classes
+  ADDNAME.classList.add('name');
+  DELBTN.classList.add('del');
+  //48
+  ADDDUTY.classList.add('duty');
+  ADDNUMBER.classList.add('number');
+
+  //append to the DOM
+  TR.appendChild(ADDNAME);
+  TR.appendChild(DELBTN);
+  LIST.appendChild(TR);
+  //48
+
+});
+
+
+
+
+// prevent default behavior
+const LINK = document.querySelector('#banner a');
+
+LINK.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('Navigation to ', e.target.textContent, 'was prevented');
+});
+
+
+
+
+

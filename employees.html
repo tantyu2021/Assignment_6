@@ -5,73 +5,95 @@
     <title>Assignment 05 - Employee Management Application</title>
     <script src="js/employee-management.js"></script>
     <style>
-
 body {
     font-family: sans-serif;
-    width: 730px;
+    color: #555;  
 }
 main {
-    padding: 0 2em 1em;
+  width: 90%;
+  max-width: 900px;
+  margin: 1.6em auto;
 }
-h1 {
-    font-size: 150%;
+#add input {
+  padding: 5px;
+  border: solid 1px #999;
+  width: 300px;
 }
-h2 {
-    font-size: 120%;
+#add button {
+  border: solid 1px #069;
+  background-color: #069;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 20px 0;
+  cursor: pointer;
+  width: 100px;
+  color: #fff;
 }
-input[type="text"], select {
-    width: 40em;
-    padding: 5px 0;
-    margin-bottom: 1em;
-}
-input[type="checkbox"],[type="radio"] {
-    width: 1em;
-    margin-bottom: 1em;
-}
-input[type="button"] {
-    margin-top:10px;
-}
-#registration_info span {
-    color: red;
-}
-td {
-	width: 9em;	
-}
-
+/* table*/
 /* for table -table, thead, tbody, th, td, tr*/
+table {
+  width: 100%;
+}
 table, thead, th, td, tr {
-    border: olive 1px solid;
+  border: #fff 1px solid;
 }
-thead {
-   background-color: cornflowerblue;
-   color: #fff;
+.thead {
+ background-color: #069;
+ padding: 5px auto;
+ color: #fff;
 }
- td :nth-child(odd){
-    background-color: skyblue;
+.thead tr{
+ background-color: #069;
+}
+/* tr:first-child{
+  background-color: #069;
+} */
+tr:nth-child(odd){
+  background-color: skyblue;
+}
+tr:nth-child(even){
+  background-color: #dedede;
+}
+tr input[type="button"] {
+  background-color: #069;
+  padding: 3px 15px;
+ color: #fff;
+}
+.del {
+    margin: 3px auto;
+  cursor: pointer;
+}
+.del:hover {
+  background-color: #333;
 }
     </style>
 </head>
 <body>
+    <main >
+        <header>
+            <section id="add">
+          <div id="banner">
+            <a href="https://www.google.com">Visit Google</a>
+          </div>          
     <h2>The Employee Management Application</h2>
-    <h3>Add Employee</h3>
-    <form action="register_account.html" method="get" id="registration_form">
-        <strong>Name:</strong>
-        <input type="text" id="email_address"><br>
-        <strong>Title:</strong>
-        <input type="text" id="phone"><br>
-        <strong>Extension:</strong>
-        <input type="text" id="extension"><br>
-           
- 
-        <input type="button" id="register" value="Add">
-       
+    <p>Add Employee</p>
+    <form action="" method="get" id="addList">
+        <strong>Name:</strong><br>
+        <input type="text" id="name"><br>
+        <strong>Title:</strong><br>
+        <input type="text" id="title"><br>
+        <strong>Extension:</strong><br>
+        <input type="text" id="extension"><br>         
+      <!--  --> 
+        <button>Add</button>      
     </form>
+</section>
+</header>
+
+<section id="createList">
 <h3> <strong>Showing Employees List</strong></h3>
 <output id="futurevalue"></output>
-<!--
-<output id="futurevalue"></output> -->
-    <h2 id="registration_header">&nbsp;</h2>
-    <table id="registration_info">table</table>
+<!--  -->
     <table>
         <thead>
          <tr>  
@@ -87,39 +109,31 @@ thead {
              <td>name1</td>
              <td>duty 1</td>
              <td>n 1</td>
-             <td> button 1</td>
+             <td> <input type="button" value="Delete" class="del" onclick="choice()"></td>
      </tr>
-
 <tr>  
         <td>name2</td>
         <td>duty 2</td>
         <td>n 2</td>
-        <td> button 2</td>
+        <td> <input type="button" value="Delete" class="del" onclick="choice()"></td>
 </tr>
-
 <tr>  
     <td>name3</td>
     <td>duty 3</td>
     <td>n 3</td>
-    <td> button 3</td>
+    <td><input type="button" value="Delete" class="del" onclick="choice()"></td>
 </tr>
-
 <tr>  
     <td>name4</td>
     <td>duty 4</td>
     <td>n 4</td>
-    <td> button 4</td>
-</tr>
-
- 
-       <!--      <td>&nbsp;</td>
-             <td></td>
-             <td></td>
-             <td></td>           
-          </tr>    -->
+    <td> <input type="button" value="Delete" class="del" onclick="choice()"></td>
+</tr> 
+<!--   -->
 </tbody>
 </table>
+</section>
 
-
+</main>
 </body>
 </html>

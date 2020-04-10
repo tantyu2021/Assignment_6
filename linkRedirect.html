@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavsScript - link redirection</title>
+<!--  <link rel="stylesheet" href="css/linkRedirect.css">
+-->
+  <style>
+body {
+  font-family:  sans-serif;
+  color: #555;
+}
+#wrap {
+  width: 80%;
+  max-width: 900px;
+  margin: 1.6em auto;
+  border: solid 1px #ccc;
+}
+#createList ul {
+  list-style-type: none;
+  padding: 0;
+}
+#createList li {
+  padding: 20px;
+  border: solid 5px #ddd;/*47 */
+  margin: 20px 10px;
+}
+  </style>
+</head>
+
+<body>
+  <main id="wrap">
+    <header>
+      <div id="banner">
+        <a href="https://www.google.com">Visit Google</a>
+        <h2>Link redirection</h2>
+      </div>
+    </header>  
+    <section id="createList">
+        <ul>
+          <li>.....</li>
+          <li>.....</li> 
+        </ul> 
+      </section>      
+</main>
+
+<script>
+  // prevent default behavior
+const LINK = document.querySelector('#banner a');
+
+LINK.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('Navigation to ', e.target.textContent, 'was prevented');
+});
+</script>
+ <!-- <script src="scripts/linkRedirect.js"></script>-->
+
+</body>
+</html>

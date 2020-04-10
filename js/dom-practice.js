@@ -14,10 +14,10 @@ function btn2() {
 //     alert(e.target.innerText);
 // });
 
-// let myElement = window.document.getElementById("btn3");
-// myElement.onclick = function() {
-// window.alert("btn3: I have been clicked");
-// }
+let myElement = window.document.getElementById("btn3");
+myElement.onclick = function() {
+window.alert("btn3: I have been clicked");
+}
 
 // btn3.addEventListener("click", writeMessage);
 // function writeMessage() {
@@ -25,32 +25,23 @@ function btn2() {
 // }
 
 //STEP 6 - prevents the browser from redirecting to the site
+// prevent default behavior
+const LINK = document.querySelector('#banner a');
 
-// function redirectHere() {
-//     alert("Google is resting");
-//   }
-
-function redirect1() {
-    alert("Hello Google!");
-  }
-
-  
-function redirectHere(event){
-    event.stopPropagation();
-    alert("The link element was clicked.");
-    document.getElementById("redirect").style.display = "none";
- }
-
- function redirectHere(event){
-a.addEventListener("click", function (e) {
-    e.stopImmediatePropagation();
+LINK.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('Navigation to ', e.target.textContent, 'was prevented');
 });
- }
+
+// function redirectHere(event){
+//     event.stopPropagation();
+//     alert("The link element was clicked.");
+//     document.getElementById("redirect").style.display = "none";
+//  }
 
 //  function redirectHere(event){
-// a.click(function(event) {
-//     window.alert('you clicked on the link but the browser prevents from  redirecting to the site');
-//     //window.alert(event.target.nodeName + ' triggered the event.');
+// a.addEventListener("click", function (e) {
+//     e.stopImmediatePropagation();
 // });
 //  }
 
